@@ -10,8 +10,9 @@ const CustomersList = ({ customers, urlPath }) => {
           key={customer.dni}
           name={customer.name}
           editAction={"Editar"}
-          delAction={"Eliminar"}
+          deleteAction={"Eliminar"}
           urlPath={urlPath}
+          dni={customer.dni}
         />
       ))}
     </div>
