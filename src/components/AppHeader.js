@@ -1,6 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { EPROTONOSUPPORT } from 'constants';
+import React from "react";
+import PropTypes from "prop-types";
 
 const AppHeader = props => {
   return (
@@ -13,7 +12,7 @@ const AppHeader = props => {
 };
 
 AppHeader.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired
 };
 
 export default AppHeader;
