@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
+import { withRouter } from "react-router-dom";
 import AppFrame from "../components/AppFrame";
 import CustomersList from "../components/CustomersList";
 import CustomersActions from "../components/CustomersActions";
@@ -11,12 +12,16 @@ const customers = [
   { dni: "26", name: "Juan", age: 34 }
 ];
 class CustomersContainer extends Component {
+  handleAddNew = () => {
+    this.props.history.push("/customers/new");
+  };
+
   renderBody = customers => {
     return (
       <div>
         <CustomersList customers={customers} urlPath={"customer/"} />
         <CustomersActions>
-          <button onClick={this.hangleAddNew}> Nuevo Cliente</button>
+          <button onClick={this.handleAddNew}> Nuevo Cliente</button>
         </CustomersActions>
       </div>
     );
@@ -34,6 +39,6 @@ class CustomersContainer extends Component {
   }
 }
 
-// CustomersContainer.propTypes = {};
+CustomersContainer.propTypes = { history: PropTypes.object.isRequired };
 
-export default CustomersContainer;
+export default withRouter(CustomersContainer);
