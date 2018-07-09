@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const CustomerListItem = ({ name, editAction, deleteAction, urlPath, dni }) => {
   return (
-    <div className="customer-list-item">
+    <div className="customers-list-item">
       <div className="field">
         <Link to={`${urlPath}${dni}`}>{name}</Link>{" "}
       </div>
